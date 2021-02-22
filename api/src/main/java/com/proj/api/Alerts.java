@@ -1,11 +1,12 @@
 package com.proj.api;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Alerts {
 	
 	
-	private List<alert> alerts;
+	private List<alert> alerts = new ArrayList<alert>();
 	private static Alerts instance;
 	
 	public static Alerts getInstance(){
