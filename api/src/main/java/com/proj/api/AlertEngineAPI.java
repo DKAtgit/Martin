@@ -17,17 +17,7 @@ public class AlertEngineAPI extends RouteBuilder  {
 	@Override
 	public void configure() throws Exception {
 		// TODO Auto-generated method stub
-		/*
-		restConfiguration()
-        .contextPath("/alertapi")
-        .apiContextPath("/api-list")
-        .apiProperty("api.title", "doc-api")
-        .apiProperty("api.version", "1.0")
-        .apiProperty("cors", "true")
-        .apiContextRouteId("doc-api")
-        .port(ProjectProperties.getInstance().getProperty("server.port"))
-        .bindingMode(RestBindingMode.json);
-		*/
+		
 		
 		restConfiguration().component("netty-http").host("0.0.0.0").port(ProjectProperties.getInstance().getProperty("server.port"))
 		.bindingMode(RestBindingMode.auto);
@@ -51,17 +41,6 @@ public class AlertEngineAPI extends RouteBuilder  {
         .route().bean(service, "addAlert(${body})").endRest();
 		
 		
-//		 rest("/alert").description("alerts description")
-//		.post().description("Add new alert").type(alert.class).param().name("body").type(RestParamType.body).endParam()
-//		.to("bean:alertService?method=addAlert");
-		
-		//.post().type(alert.class).to("direct:postObject");
-		
-		//.post("").type(alert.class).description("Add new alert").route()
-		//.routeId("alert-add-api").bean(alertService.class, "addAlert").setBody(function).endRest();
-		
-		//consumes("application/json")
-		//route().routeId("alert-add-api")
 		
 	}
 	
