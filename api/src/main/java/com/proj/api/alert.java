@@ -1,7 +1,7 @@
 package com.proj.api;
 
 import java.io.Serializable;
-
+ 
 public class alert {
 	
 //	alert (String id, alerttype alerttype, String alertdescription){
